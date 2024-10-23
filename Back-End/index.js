@@ -27,19 +27,19 @@ app.use(function(req, res, next){
 app.use(bodyParser.json())
 
 //Se configura el puerto a utilizar
-// const PUERTO = 3000
-const PUERTO = process.env.PORT || 3000
+const PUERTO = 3000
+// const PUERTO = process.env.PORT || 3000
 
 //Se crea la instancia de la conexion a Base de datos
 const conexion = mysql.createConnection(
     {
-        host: 'autorack.proxy.rlwy.net',
+        host: 'localhost',
         //nombre de la base de datos
         database: 'proyecto',
         //credenciales de mysql
         user:'root',
-        password:'aVqMYNEGhdNvtHuOVAYINWbdyZArizIM',
-        port: 10819
+        password:'123456',
+        //port: 10819
     }
 )
 
