@@ -15,4 +15,10 @@ export class LayoutPageComponent {
     {label:'Contacto Agencias', icon:'assistant', url:'./agencias'},
     {label:'Administrador', icon:'label_important', url:'./login'},
   ]
+
+  isChatbotVisible: boolean = false; // Inicialmente oculto
+
+  toggleChatbot() {
+    this.isChatbotVisible = !this.isChatbotVisible; // Alterna la visibilidad
+  }
 }
