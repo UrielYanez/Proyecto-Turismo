@@ -20,8 +20,20 @@
     <button mat-icon-button (click)="sidenav.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
-    <span>Menú </span> <!-- Etiqueta -->
+    <span>Menú </span>
     <span class="spacer"></span>
+
+    <!-- Botón para el chatbot -->
+    <button mat-icon-button class="boton-chat" (click)="toggleChatbot()">
+      <label>Asistente </label>
+      <mat-icon>chat_bubble_outline</mat-icon>
+    </button>
   </mat-toolbar>
+
   <router-outlet></router-outlet>
+
+  <!-- iframe del chatbot -->
+  <div *ngIf="isChatbotVisible" class="chatbot-container">
+    <iframe src="https://www.chatbase.co/chatbot-iframe/M04pvaVQKjoTF1jpyJdh3" frameborder="0"></iframe>
+  </div>
 </mat-sidenav-container>
