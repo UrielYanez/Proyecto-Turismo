@@ -8,10 +8,12 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, NgModel } from '@angular/forms';
 import { FormularioComponent } from './auth/pages/formulario/formulario.component';
+import { SpotifyComponent } from './auth/pages/spotify/spotify.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    SpotifyComponent,
     //FormularioComponent,
   ],
   imports: [

@@ -16,6 +16,7 @@ import { OlvidarpassComponent } from './pages/olvidarpass/olvidarpass.component'
 import { InforesComponent } from './pages/infores/infores.component';
 import { ListalugarComponent } from './pages/listalugar/listalugar.component';
 import { InfoitiComponent } from './pages/infoiti/infoiti.component';
+import { SpotifyComponent } from './pages/spotify/spotify.component';
 
 const routes: Routes = [
   {
@@ -37,6 +38,7 @@ const routes: Routes = [
       { path: 'login', component: LoginComponent },
       { path: 'inicio', component: InicioComponent},
       { path: 'agencias', component: AgenciasComponent},
+      { path: 'spotify', component: SpotifyComponent},
       { path: '**', redirectTo: 'inicio'}
     ]
   }
