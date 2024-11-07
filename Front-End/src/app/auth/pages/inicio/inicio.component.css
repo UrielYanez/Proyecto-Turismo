@@ -63,6 +63,38 @@ body {
   border: 1px solid #ddd;
 }
 
+.spotify {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #333; /* Fondo oscuro */
+  color: #fff; /* Texto blanco */
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra */
+}
+
+.spotify p {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #ffdd57; /* Amarillo suave */
+  font-weight: bold;
+}
+
+.spotify button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #ff6347; /* Color tomate */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.spotify button:hover {
+  background-color: #ff4500; /* Un tono más oscuro al pasar el mouse */
+}
+
 /* Responsive Design */
 
 @media (max-width: 1200px) {

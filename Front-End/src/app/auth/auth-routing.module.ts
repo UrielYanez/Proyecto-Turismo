@@ -38,8 +38,8 @@ const routes: Routes = [
       { path: 'login', component: LoginComponent },
       { path: 'inicio', component: InicioComponent},
       { path: 'agencias', component: AgenciasComponent},
-      { path: '**', redirectTo: 'inicio'},
-      { path: 'spotify', component: SpotifyComponent}
+      { path: 'spotify', component: SpotifyComponent},
+      { path: '**', redirectTo: 'inicio'}
     ]
   }
 ];
