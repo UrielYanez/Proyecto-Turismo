@@ -17,6 +17,7 @@ import { InforesComponent } from './pages/infores/infores.component';
 import { ListalugarComponent } from './pages/listalugar/listalugar.component';
 import { InfoitiComponent } from './pages/infoiti/infoiti.component';
 import { SpotifyComponent } from './pages/spotify/spotify.component';
+import { PaypalComponent } from './pages/paypal/paypal.component';
 
 const routes: Routes = [
   {
@@ -39,6 +40,7 @@ const routes: Routes = [
       { path: 'inicio', component: InicioComponent},
       { path: 'agencias', component: AgenciasComponent},
       { path: 'spotify', component: SpotifyComponent},
+      { path: 'paypal', component: PaypalComponent},
       { path: '**', redirectTo: 'inicio'}
     ]
   }
