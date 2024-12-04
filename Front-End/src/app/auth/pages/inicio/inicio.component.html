@@ -1,21 +1,3 @@
-<!-- <body>
-    <div class="introduccion">
-      <p>CONOCE LA CIUDAD DE DOLORES HIDALGO C.I.N.</p>
-    </div>
-
-    <div class="presentacion">
-      <p>
-        ESTE PUEBLO MÁGICO ES PATRIMONIO HISTÓRICO Y CUNA DE LA INDEPENDENCIA. PRESERVA SECRETOS, COMO LA CATEDRAL,
-        TESTIGO SILENCIOSO QUE GUARDA ENTRE SUS MUROS EL SONIDO DE LA VOZ DEL CURA MIGUEL HIDALGO CUANDO DIÓ EL GRITO
-        DE INDEPENDENCIA. MIENTRAS CAMINAS POR ESTE ENCANTADOR E INTERESANTE PUEBLO, LLENO DE MUSEOS Y MONUMENTOS QUE
-        NARRAN LA HISTORIA DE MÉXICO, DEJATE CAUTIVAR POR ESTE LUGAR REPLETO DE TRADICIONES Y CULTURA, DONDE CADA RINCÓN
-        TE TRANSPORTA A ÉPOCAS PASADAS Y TE INVITA A DESCUBRIR LOS DETALLES DE UNA HERENCIA QUE SIGUE VIVA EN EL
-        PRESENTE.
-      </p>
-    </div>
-
-  </body> -->
-
 <body>
   <div class="introduccion">
     <p>CONOCE LA CIUDAD DE DOLORES HIDALGO C.I.N.</p>
@@ -32,6 +14,27 @@
     </p>
   </div>
 
+  <!-- Sección para ingresar una ciudad -->
+  <div class="search-container">
+    <input [(ngModel)]="cityName" type="text" class="weather-input" placeholder="Ingresa una ciudad" />
+    <button class="weather-button" (click)="getClimaPorCiudad()">Obtener Clima de la Ciudad</button>
+  </div>
+
+  <!-- Sección para ingresar coordenadas -->
+  <div class="search-container">
+    <input [(ngModel)]="lat" type="text" class="weather-input" placeholder="Latitud" />
+    <input [(ngModel)]="lon" type="text" class="weather-input" placeholder="Longitud" />
+    <button class="weather-button" (click)="getClimaPorCoordenadas()">Obtener Clima por Coordenadas</button>
+  </div>
+
+  <!-- Mostrar el clima si existe -->
+  <h2 class="nav__title"><i class="fa-solid fa-cloud"></i> Temperatura actual en {{ cityName || 'Ubicación seleccionada' }}: {{ temp }}°C</h2>
+
+  <!-- Mensaje de error si no se pudo obtener el clima -->
+  <div *ngIf="errorMessage" class="error-message">
+    <p>{{ errorMessage }}</p>
+  </div>
+
   <div class="imagenes">
     <img
       src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Parroquia_de_Nuestra_Se%C3%B1ora_de_los_Dolores_en_Dolores_Hidalgo%2C_Guanajuato%2C_M%C3%A9xico.jpg/263px-Parroquia_de_Nuestra_Se%C3%B1ora_de_los_Dolores_en_Dolores_Hidalgo%2C_Guanajuato%2C_M%C3%A9xico.jpg"
@@ -42,8 +45,18 @@
     <img src="https://verestmagazine.com/wp-content/uploads/2023/10/Dolores-Hidalgo-Guanajuato-1.jpg"
       alt="Monumento a la Independencia">
   </div>
+
   <div class="spotify">
     <p>Busca canciones populares en la ciudad:</p>
     <button onclick="window.location.href='/auth/spotify';">Vamoo</button>
   </div>
+
+  <div class="paypal">
+    <h1>¿Eres de una agencia de viajes y te interesa promocionar tus paquetes?</h1>
+    <h2>Simplemente realiza un pago y se te redirigirá a otro apartado para que añadas tu paquete</h2>
+    <div class="paypal-container">
+      <div class="paypal" id="paypal-button-container"></div>
+    </div>
+  </div>
+  <br><br><br><br><br><br><br>
 </body>

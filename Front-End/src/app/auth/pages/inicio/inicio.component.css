@@ -1,143 +1,35 @@
-/* Global Styles */
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f7f7f7; /* Gris claro */
-}
-
-/* Introducción */
-
-.introduccion {
-  background-size: cover;
-  height: 100px;
+/* Estilos nuevos para la sección de búsqueda de clima */
+.search-container {
   display: flex;
+  gap: 10px;
   justify-content: center;
-  align-items: center;
-  color: #333; /* Negro */
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-.introduccion p {
-  font-size: 36px;
-  font-weight: bold;
-  margin: 0;
-  color: #666; /* Gris oscuro */
-  text-align: center;
-}
-
-/* Presentación */
-
-.presentacion {
-  padding: 20px;
-  background-color: #fff; /* Blanco */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.presentacion p {
-  font-size: 18px;
   margin: 20px 0;
-  color: #444; /* Gris medio */
-  text-align: justify;
 }
 
-/* Imágenes */
-
-.imagenes {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.imagenes img {
-  width: 30%;
-  margin: 10px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  background-color: #f7f7f7; /* Gris claro */
+.weather-input {
+  padding: 10px;
   border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 200px;
 }
 
-.spotify {
-  margin-top: 20px;
-  padding: 20px;
-  background-color: #333; /* Fondo oscuro */
-  color: #fff; /* Texto blanco */
-  text-align: center;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra */
-}
-
-.spotify p {
-  font-size: 20px;
-  margin-bottom: 15px;
-  color: #ffdd57; /* Amarillo suave */
-  font-weight: bold;
-}
-
-.spotify button {
+.weather-button {
   padding: 10px 20px;
-  font-size: 16px;
-  background-color: #ff6347; /* Color tomate */
-  color: #fff;
+  background-color: #007bff;
+  color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s;
 }
 
-.spotify button:hover {
-  background-color: #ff4500; /* Un tono más oscuro al pasar el mouse */
+.weather-button:hover {
+  background-color: #0056b3;
 }
 
-/* Responsive Design */
-
-@media (max-width: 1200px) {
-  .introduccion {
-    height: 250px;
-  }
-  .imagenes img {
-    width: 40%;
-  }
-}
-
-@media (max-width: 992px) {
-  .introduccion {
-    height: 200px;
-  }
-  .imagenes img {
-    width: 50%;
-  }
-}
-
-@media (max-width: 768px) {
-  .introduccion {
-    height: 150px;
-  }
-  .imagenes img {
-    width: 60%;
-  }
-}
-
-@media (max-width: 480px) {
-  .introduccion {
-    height: 100px;
-  }
-  .imagenes img {
-    width: 80%;
-  }
-}
-
-@media (max-width: 320px) {
-  .introduccion {
-    height: 80px;
-  }
-  .imagenes img {
-    width: 90%;
-  }
+.error-message {
+  text-align: center;
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
 }
