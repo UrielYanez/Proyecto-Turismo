@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ClimaService } from '../../services/clima.service';
+=======
+
 
 @Component({
   selector: 'app-inicio',
@@ -18,6 +20,9 @@ export class InicioComponent implements OnInit {
 
   constructor(private router: Router,
     private climaservice: ClimaService) { }
+
+export class InicioComponent implements OnInit{
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     this.loadPayPalScript();

@@ -1,0 +1,105 @@
+<h1 class="text-center mb-4">Crear Tu Paquete Turístico</h1>
+<div class="info-section">
+  <h3>Información Importante</h3>
+  <ul>
+    <li>Complete todos los campos requeridos</li>
+    <li>La imagen debe ser clara y representativa del paquete</li>
+    <li>Verifique todos los datos antes de crear el paquete</li>
+  </ul>
+</div>
+
+<div class="container">
+  <div class="form-section">
+    <mat-card>
+      <mat-card-content>
+        <form class="grid" [formGroup]="paqueteForm" (ngSubmit)="onSubmit()">
+          <mat-form-field class="col-12 sm:col-6">
+            <mat-label>Nombre del Paquete</mat-label>
+            <input matInput type="text" formControlName="nombre" required />
+          </mat-form-field>
+
+          <mat-form-field class="col-12 sm:col-6">
+            <mat-label>Descripción</mat-label>
+            <input matInput type="text" formControlName="descripcion" required />
+          </mat-form-field>
+
+          <mat-form-field class="col-12 sm:col-6">
+            <mat-label>Cantidad de días</mat-label>
+            <input matInput type="number" formControlName="dia" required />
+          </mat-form-field>
+
+          <mat-form-field class="col-12 sm:col-6">
+            <mat-label>Cantidad de noches</mat-label>
+            <input matInput type="number" formControlName="noche" required />
+          </mat-form-field>
+
+          <mat-form-field class="col-12 sm:col-6">
+            <mat-label>Hotel</mat-label>
+            <mat-select formControlName="hotel" required>
+              <mat-option *ngFor="let hotel of hoteles" [value]="hotel.nombre">
+                {{ hotel.nombre }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field class="col-12 sm:col-6">
+            <mat-label>Restaurante</mat-label>
+            <mat-select formControlName="restaurante" required>
+              <mat-option *ngFor="let restaurante of restaurantes" [value]="restaurante.nombre">
+                {{ restaurante.nombre }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field class="col-12 sm:col-6">
+            <mat-label>Experiencia</mat-label>
+            <mat-select formControlName="experiencia" required>
+              <mat-option *ngFor="let experiencia of experiencias" [value]="experiencia.nombre">
+                {{ experiencia.nombre }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field class="col-12 sm:col-6">
+            <mat-label>Actividades</mat-label>
+            <input matInput type="text" formControlName="actividad" required />
+          </mat-form-field>
+
+          <mat-form-field class="col-12">
+            <mat-label>URL de la imagen</mat-label>
+            <input matInput type="text" formControlName="alt_img" />
+          </mat-form-field>
+
+          <div class="col-12 flex justify-content-center">
+            <button mat-fab extended color="primary" type="submit">
+              <mat-icon>check_circle</mat-icon>
+              Crear Paquete
+            </button>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="preview-section">
+    <mat-card>
+      <mat-card-content>
+        <h2>Vista Previa del Paquete</h2>
+
+        <div class="image-preview-container" *ngIf="imagePreview">
+          <img [src]="imagePreview"
+               (error)="onImageError()"
+               alt="Vista previa del paquete"
+               class="preview-image">
+        </div>
+
+        <div class="no-image-message" *ngIf="!imagePreview">
+          <mat-icon>image</mat-icon>
+          <p>Ingresa la URL de una imagen para ver la vista previa</p>
+        </div>
+
+
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

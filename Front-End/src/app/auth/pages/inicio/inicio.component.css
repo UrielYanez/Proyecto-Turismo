@@ -4,32 +4,112 @@
   gap: 10px;
   justify-content: center;
   margin: 20px 0;
+
+  color: #444; /* Gris medio */
+  text-align: justify;
 }
 
-.weather-input {
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  width: 200px;
+/* Imágenes */
+/* Estilos específicos para el div paypal */
+.paypal {
+  background-color: #f2f2f2; /* Fondo gris suave */
+  padding: 20px;
+  margin-top: 30px;
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  text-align: center; /* Centrado de contenido */
 }
 
-.weather-button {
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  border: none;
+.paypal h1 {
+  font-family: 'Arial', sans-serif;
+  font-size: 24px;
+  color: #333333; /* Color de texto oscuro */
+  margin-bottom: 15px;
+}
+
+.paypal h2 {
+  font-family: 'Arial', sans-serif;
+  font-size: 18px;
+  color: #555555; /* Color de texto gris */
+  margin-bottom: 25px;
+}
+
+.paypal-container {
+  display: flex;
+  justify-content: center; /* Centrado del contenedor */
+  align-items: center;
+  height: 100px; /* Altura del contenedor */
+}
+
+.paypal#paypal-button-container {
+  width: 250px; /* Ancho para el botón de PayPal */
+  height: 50px; /* Altura para el botón */
+  background-color: #0070ba; /* Color de fondo azul de PayPal */
   border-radius: 5px;
+  color: white; /* Color de texto en el botón */
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s; /* Transición suave para color */
 }
 
-.weather-button:hover {
-  background-color: #0056b3;
+.paypal#paypal-button-container:hover {
+  background-color: #005f8b; /* Cambio de color al pasar el cursor */
 }
 
-.error-message {
-  text-align: center;
-  color: red;
-  font-weight: bold;
-  margin-top: 10px;
+.imagenes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+
+/* Responsive Design */
+
+@media (max-width: 1200px) {
+  .introduccion {
+    height: 250px;
+  }
+  .imagenes img {
+    width: 40%;
+  }
+}
+
+@media (max-width: 992px) {
+  .introduccion {
+    height: 200px;
+  }
+  .imagenes img {
+    width: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .introduccion {
+    height: 150px;
+  }
+  .imagenes img {
+    width: 60%;
+  }
+}
+
+@media (max-width: 480px) {
+  .introduccion {
+    height: 100px;
+  }
+  .imagenes img {
+    width: 80%;
+  }
+}
+
+@media (max-width: 320px) {
+  .introduccion {
+    height: 80px;
+  }
+  .imagenes img {
+    width: 90%;
+  }
 }

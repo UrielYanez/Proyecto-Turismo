@@ -34,10 +34,11 @@ import { AtractivoComponent } from './components/card/atractivo/atractivo.compon
 import { ItinerarioComponent } from './components/card/itinerario/itinerario.component';
 import { ListalugarComponent } from './pages/listalugar/listalugar.component';
 import { ExperienciaImagePipe } from './pipes/experiencia-image.pipe';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PersonalizadoAtractivoComponent } from './components/card/personalizado-atractivo/personalizado-atractivo.component';
 import { InfoitiComponent } from './pages/infoiti/infoiti.component';
 import { SpotifyComponent } from './pages/spotify/spotify.component';
+import { PaypalComponent } from './pages/paypal/paypal.component';
 
 
 
@@ -77,12 +78,14 @@ import { SpotifyComponent } from './pages/spotify/spotify.component';
     ListalugarComponent,
     PersonalizadoAtractivoComponent,
     InfoitiComponent,
+    PaypalComponent,
   ],
   imports: [
     CommonModule,
     AuthRoutingModule,
     MaterialModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class AuthModule { }
