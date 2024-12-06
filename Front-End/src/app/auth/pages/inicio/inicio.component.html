@@ -21,20 +21,70 @@
     <img
       src="https://www.gob.mx/cms/uploads/article/main_image/85557/Dolores-Hidalgo_Guanajuato-Jardi_n-Independencia-web.jpg"
       alt="Museo de Dolores Hidalgo">
-    <img src="https://verestmagazine.com/wp-content/uploads/2023/10/Dolores-Hidalgo-Guanajuato-1.jpg"
-      alt="Monumento a la Independencia">
-  </div>
-  <div class="spotify">
-    <p>Busca canciones populares en la ciudad:</p>
-    <button onclick="window.location.href='/auth/spotify';">Vamoo</button>
-  </div>
+    <div class="weather-container">
+      <div class="search-box">
+        <input
+          type="text"
+          [(ngModel)]="city"
+          placeholder="Ingresa una ciudad..."
+          class="search-input"
+        >
+        <button (click)="searchWeather()" class="search-button">
+          Buscar Clima
+        </button>
+      </div>
 
-  <div class="paypal">
-    <h1>¿Eres de una agencia de viajes y te interesa promocionar tus paquetes?</h1>
-    <h2>Simplemente realiza un pago y se te redirigirá a otro apartado para que añadas tu paquete</h2>
-    <div class="paypal-container">
-      <div class="paypal" id="paypal-button-container"></div>
+      <div class="weather-info" *ngIf="weatherData">
+        <h2>{{ weatherData.name }}</h2>
+        <div class="temperature">
+          {{ (weatherData.main.temp - 273.15).toFixed(1) }}°C
+        </div>
+        <div class="weather-description">
+          {{ weatherData.weather[0].description }}
+        </div>
+        <div class="weather-details">
+          <div>Humedad: {{ weatherData.main.humidity }}%</div>
+          <div>Viento: {{ weatherData.wind.speed }} m/s</div>
+        </div>
+      </div>
     </div>
   </div>
+
+  <div class="features-container">
+    <div class="spotify-container">
+      <div class="spotify">
+        <div class="spotify-icon">
+          <i class="fas fa-music"></i>
+        </div>
+        <h2>Descubre la Música Local</h2>
+        <p>Explora las canciones más populares de Dolores Hidalgo</p>
+        <button onclick="window.location.href='/auth/spotify';">
+          <i class="fab fa-spotify"></i>
+          Conectar con Spotify
+        </button>
+      </div>
+    </div>
+
+    <div class="paypal-section">
+      <div class="paypal-content">
+        <div class="paypal-icon">
+          <i class="fas fa-suitcase-rolling"></i>
+        </div>
+        <h2>¿Eres Agente de Viajes?</h2>
+        <p>Promociona tus paquetes turísticos en nuestra plataforma</p>
+        <div class="paypal-info">
+          <div class="price">
+            <span class="amount">$10.00 MXN</span>
+          </div>
+          <ul class="benefits">
+            <li><i class="fas fa-check"></i> Publicación de un paquete turístico</li>
+            <li><i class="fas fa-check"></i> Exposición a miles de visitantes</li>
+          </ul>
+        </div>
+        <div id="paypal-button-container"></div>
+      </div>
+    </div>
+  </div>
+
   <br><br><br><br><br><br><br>
 </body>

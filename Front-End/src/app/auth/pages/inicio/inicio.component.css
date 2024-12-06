@@ -1,5 +1,4 @@
 /* Global Styles */
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -8,18 +7,17 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #f7f7f7; /* Gris claro */
+  background-color: #f7f7f7;
 }
 
 /* Introducción */
-
 .introduccion {
   background-size: cover;
   height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #333; /* Negro */
+  color: #333;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -27,167 +25,267 @@ body {
   font-size: 36px;
   font-weight: bold;
   margin: 0;
-  color: #666; /* Gris oscuro */
+  color: #666;
   text-align: center;
 }
 
 /* Presentación */
-
 .presentacion {
   padding: 20px;
-  background-color: #fff; /* Blanco */
+  background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .presentacion p {
   font-size: 18px;
   margin: 20px 0;
-  color: #444; /* Gris medio */
+  color: #444;
   text-align: justify;
-}
-
-/* Imágenes */
-/* Estilos específicos para el div paypal */
-.paypal {
-  background-color: #f2f2f2; /* Fondo gris suave */
-  padding: 20px;
-  margin-top: 30px;
-  border-radius: 10px; /* Bordes redondeados */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-  text-align: center; /* Centrado de contenido */
-}
-
-.paypal h1 {
-  font-family: 'Arial', sans-serif;
-  font-size: 24px;
-  color: #333333; /* Color de texto oscuro */
-  margin-bottom: 15px;
-}
-
-.paypal h2 {
-  font-family: 'Arial', sans-serif;
-  font-size: 18px;
-  color: #555555; /* Color de texto gris */
-  margin-bottom: 25px;
-}
-
-.paypal-container {
-  display: flex;
-  justify-content: center; /* Centrado del contenedor */
-  align-items: center;
-  height: 100px; /* Altura del contenedor */
-}
-
-.paypal#paypal-button-container {
-  width: 250px; /* Ancho para el botón de PayPal */
-  height: 50px; /* Altura para el botón */
-  background-color: #0070ba; /* Color de fondo azul de PayPal */
-  border-radius: 5px;
-  color: white; /* Color de texto en el botón */
-  font-size: 16px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  transition: background-color 0.3s; /* Transición suave para color */
-}
-
-.paypal#paypal-button-container:hover {
-  background-color: #005f8b; /* Cambio de color al pasar el cursor */
 }
 
 .imagenes {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .imagenes img {
   width: 30%;
-  margin: 10px;
+  height: 400px;
+  object-fit: cover;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  background-color: #f7f7f7; /* Gris claro */
-  border: 1px solid #ddd;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.spotify {
-  margin-top: 20px;
-  padding: 20px;
-  background-color: #333; /* Fondo oscuro */
-  color: #fff; /* Texto blanco */
-  text-align: center;
+.weather-container {
+  width: calc(33.333% - 14px);
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #00feba, #5b548a);
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra */
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.spotify p {
-  font-size: 20px;
-  margin-bottom: 15px;
-  color: #ffdd57; /* Amarillo suave */
-  font-weight: bold;
+.search-box {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
 }
 
-.spotify button {
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #ff6347; /* Color tomate */
-  color: #fff;
+.search-input {
+  flex: 1;
+  padding: 0.5rem;
   border: none;
   border-radius: 5px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.search-button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  background: white;
+  color: #5b548a;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.2s;
 }
 
-.spotify button:hover {
-  background-color: #ff4500; /* Un tono más oscuro al pasar el mouse */
+.search-button:hover {
+  background: #f0f0f0;
 }
 
-
-
-/* Responsive Design */
-
-@media (max-width: 1200px) {
-  .introduccion {
-    height: 250px;
-  }
-  .imagenes img {
-    width: 40%;
-  }
+.weather-info {
+  text-align: center;
 }
 
-@media (max-width: 992px) {
-  .introduccion {
-    height: 200px;
-  }
-  .imagenes img {
-    width: 50%;
-  }
+.temperature {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+.weather-description {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  text-transform: capitalize;
+}
+
+.weather-details {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
 }
 
 @media (max-width: 768px) {
-  .introduccion {
-    height: 150px;
+  .imagenes {
+    flex-direction: column;
+    align-items: center;
   }
-  .imagenes img {
-    width: 60%;
+
+  .imagenes img,
+  .weather-container {
+    width: 100%;
+    max-width: 400px;
   }
 }
 
-@media (max-width: 480px) {
-  .introduccion {
-    height: 100px;
-  }
-  .imagenes img {
-    width: 80%;
-  }
+/* Features Container */
+.features-container {
+  padding: 40px 20px;
+  display: flex;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-@media (max-width: 320px) {
-  .introduccion {
-    height: 80px;
+.spotify-container, .paypal-section {
+  flex: 1;
+  min-width: 300px;
+}
+
+.spotify {
+  background: linear-gradient(135deg, #1DB954, #191414);
+  padding: 40px;
+  border-radius: 15px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.spotify-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #1DB954;
+}
+
+.spotify h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.spotify p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: rgba(255,255,255,0.9);
+  line-height: 1.5;
+}
+
+.spotify button {
+  background-color: #1DB954;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 auto;
+}
+
+.spotify button:hover {
+  background-color: #1ed760;
+  transform: translateY(-2px);
+}
+
+.paypal-section {
+  background: linear-gradient(135deg, #003087, #009cde);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.paypal-content {
+  padding: 40px;
+  color: white;
+  text-align: center;
+}
+
+.paypal-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #009cde;
+}
+
+.paypal-content h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.paypal-content p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: rgba(255,255,255,0.9);
+  line-height: 1.5;
+}
+
+.paypal-info {
+  background: rgba(255,255,255,0.1);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.price {
+  margin-bottom: 20px;
+}
+
+.amount {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.benefits {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.benefits li {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.benefits i {
+  color: #1DB954;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .features-container {
+    flex-direction: column;
   }
-  .imagenes img {
-    width: 90%;
+
+  .spotify-container, .paypal-section {
+    width: 100%;
+  }
+
+  .imagenes {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .imagenes img, .weather-container {
+    width: 100%;
+    max-width: 300px;
   }
 }

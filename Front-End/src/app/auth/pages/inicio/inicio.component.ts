@@ -1,16 +1,35 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { WeatherService } from '../../services/clima.service';
 
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.component.html',
-  styleUrl: './inicio.component.css'
+  styleUrls: ['./inicio.component.css']
 })
-export class InicioComponent implements OnInit{
-  constructor(private router: Router) { }
+export class InicioComponent implements OnInit {
+
+  city = '';
+  weatherData: any = null;
+
+  constructor(private router: Router, private weatherService: WeatherService) { }
+
 
   ngOnInit(): void {
     this.loadPayPalScript();
+  }
+
+  searchWeather() {
+    if (this.city.trim()) {
+      this.weatherService.getWeather(this.city).subscribe({
+        next: (data: any) => {
+          this.weatherData = data;
+        },
+        error: (error) => {
+          alert('No se encontró la ciudad. Por favor, intenta de nuevo.');
+        }
+      });
+    }
   }
 
   loadPayPalScript() {
@@ -35,7 +54,6 @@ export class InicioComponent implements OnInit{
         return actions.order.capture().then((details: any) => {
           alert('Transaction completed by ' + details.payer.name.given_name);
           this.router.navigate(['/auth/paypal']);
-
         });
       }
     }).render('#paypal-button-container');
