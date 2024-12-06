@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ClimaService } from '../../services/clima.service';
-=======
-
+import { WeatherService } from '../../services/clima.service';
 
 @Component({
   selector: 'app-inicio',
@@ -11,54 +9,26 @@ import { ClimaService } from '../../services/clima.service';
 })
 export class InicioComponent implements OnInit {
 
-  weatherData: any;
-  temp?: string;
-  cityName: string = ''; // Variable para la ciudad
-  lat: string = ''; // Latitud
-  lon: string = ''; // Longitud
-  errorMessage: string = ''; // Mensaje de error
+  city = '';
+  weatherData: any = null;
 
-  constructor(private router: Router,
-    private climaservice: ClimaService) { }
+  constructor(private router: Router, private weatherService: WeatherService) { }
 
-export class InicioComponent implements OnInit{
-  constructor(private router: Router) { }
-
+  
   ngOnInit(): void {
     this.loadPayPalScript();
   }
 
-  // Método para obtener el clima por ciudad
-  getClimaPorCiudad() {
-    if (this.cityName) {
-      this.climaservice.getClimaPorCiudad(this.cityName).subscribe(
-        (data: any) => {
+  searchWeather() {
+    if (this.city.trim()) {
+      this.weatherService.getWeather(this.city).subscribe({
+        next: (data: any) => {
           this.weatherData = data;
-          let tempC = this.weatherData.main.temp - 273.15;
-          this.temp = tempC.toFixed(2);
-          this.errorMessage = '';
         },
-        (error) => {
-          this.errorMessage = 'No se pudo obtener el clima de esta ciudad. Por favor verifica el nombre.';
+        error: (error) => {
+          alert('No se encontró la ciudad. Por favor, intenta de nuevo.');
         }
-      );
-    }
-  }
-
-  // Método para obtener el clima por coordenadas
-  getClimaPorCoordenadas() {
-    if (this.lat && this.lon) {
-      this.climaservice.getClimaPorCoordenadas(this.lat, this.lon).subscribe(
-        (data: any) => {
-          this.weatherData = data;
-          let tempC = this.weatherData.main.temp - 273.15;
-          this.temp = tempC.toFixed(2);
-          this.errorMessage = '';
-        },
-        (error) => {
-          this.errorMessage = 'No se pudo obtener el clima con esas coordenadas. Verifica que las coordenadas sean correctas.';
-        }
-      );
+      });
     }
   }
 

@@ -1,20 +1,17 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ClimaService {
-  constructor(private http: HttpClient) { }
+export class WeatherService {
+  private apiKey = '4abd9a4b55ac4bd201b20b87e93d967f';
+  private baseUrl = 'https://api.openweathermap.org/data/2.5/weather';
 
-  private key = '4abd9a4b55ac4bd201b20b87e93d967f';
+  constructor(private http: HttpClient) {}
 
-  getClimaPorCiudad(ciudad: string): Observable<any> {
-    return this.http.get(`https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${this.key}`);
-  }
-
-  getClimaPorCoordenadas(lat: string, lon: string): Observable<any> {
-    return this.http.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${this.key}`);
+  getWeather(city: string): Observable<any> {
+    return this.http.get(`${this.baseUrl}?q=${city}&appid=${this.apiKey}&lang=es`);
   }
 }
