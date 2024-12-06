@@ -14,7 +14,7 @@ export class InicioComponent implements OnInit {
 
   constructor(private router: Router, private weatherService: WeatherService) { }
 
-
+  
   ngOnInit(): void {
     this.loadPayPalScript();
   }
