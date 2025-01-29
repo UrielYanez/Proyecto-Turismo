@@ -1,0 +1,94 @@
+<body>
+  <div class="introduccion">
+    <p>CONOCE LA CIUDAD DE DOLORES HIDALGO C.I.N.</p>
+  </div>
+
+  <div class="videollamada">
+    <script src="//code.tidio.co/yhbt8a7ddir3dygy3j4mbgcidxeiukb6.js" async></script>
+  </div>
+
+  <div class="presentacion">
+    <p>
+      ESTE PUEBLO MÁGICO ES PATRIMONIO HISTÓRICO Y CUNA DE LA INDEPENDENCIA. PRESERVA SECRETOS, COMO LA CATEDRAL,
+      TESTIGO SILENCIOSO QUE GUARDA ENTRE SUS MUROS EL SONIDO DE LA VOZ DEL CURA MIGUEL HIDALGO CUANDO DIÓ EL GRITO
+      DE INDEPENDENCIA. MIENTRAS CAMINAS POR ESTE ENCANTADOR E INTERESANTE PUEBLO, LLENO DE MUSEOS Y MONUMENTOS QUE
+      NARRAN LA HISTORIA DE MÉXICO, DEJATE CAUTIVAR POR ESTE LUGAR REPLETO DE TRADICIONES Y CULTURA, DONDE CADA RINCÓN
+      TE TRANSPORTA A ÉPOCAS PASADAS Y TE INVITA A DESCUBRIR LOS DETALLES DE UNA HERENCIA QUE SIGUE VIVA EN EL
+      PRESENTE.
+    </p>
+  </div>
+
+  <div class="imagenes">
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Parroquia_de_Nuestra_Se%C3%B1ora_de_los_Dolores_en_Dolores_Hidalgo%2C_Guanajuato%2C_M%C3%A9xico.jpg/263px-Parroquia_de_Nuestra_Se%C3%B1ora_de_los_Dolores_en_Dolores_Hidalgo%2C_Guanajuato%2C_M%C3%A9xico.jpg"
+      alt="Calle de Dolores Hidalgo">
+    <img
+      src="https://www.gob.mx/cms/uploads/article/main_image/85557/Dolores-Hidalgo_Guanajuato-Jardi_n-Independencia-web.jpg"
+      alt="Museo de Dolores Hidalgo">
+    <div class="weather-container">
+      <div class="search-box">
+        <input
+          type="text"
+          [(ngModel)]="city"
+          placeholder="Ingresa una ciudad..."
+          class="search-input"
+        >
+        <button (click)="searchWeather()" class="search-button">
+          Buscar Clima
+        </button>
+      </div>
+
+      <div class="weather-info" *ngIf="weatherData">
+        <h2>{{ weatherData.name }}</h2>
+        <div class="temperature">
+          {{ (weatherData.main.temp - 273.15).toFixed(1) }}°C
+        </div>
+        <div class="weather-description">
+          {{ weatherData.weather[0].description }}
+        </div>
+        <div class="weather-details">
+          <div>Humedad: {{ weatherData.main.humidity }}%</div>
+          <div>Viento: {{ weatherData.wind.speed }} m/s</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="features-container">
+    <div class="spotify-container">
+      <div class="spotify">
+        <div class="spotify-icon">
+          <i class="fas fa-music"></i>
+        </div>
+        <h2>Descubre la Música Local</h2>
+        <p>Explora las canciones más populares de Dolores Hidalgo</p>
+        <button onclick="window.location.href='/auth/spotify';">
+          <i class="fab fa-spotify"></i>
+          Conectar con Spotify
+        </button>
+      </div>
+    </div>
+
+    <div class="paypal-section">
+      <div class="paypal-content">
+        <div class="paypal-icon">
+          <i class="fas fa-suitcase-rolling"></i>
+        </div>
+        <h2>¿Eres Agente de Viajes?</h2>
+        <p>Promociona tus paquetes turísticos en nuestra plataforma</p>
+        <div class="paypal-info">
+          <div class="price">
+            <span class="amount">$10.00 MXN</span>
+          </div>
+          <ul class="benefits">
+            <li><i class="fas fa-check"></i> Publicación de un paquete turístico</li>
+            <li><i class="fas fa-check"></i> Exposición a miles de visitantes</li>
+          </ul>
+        </div>
+        <div id="paypal-button-container"></div>
+      </div>
+    </div>
+  </div>
+
+  <br><br><br><br><br><br><br>
+</body>
